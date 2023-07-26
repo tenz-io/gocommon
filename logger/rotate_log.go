@@ -74,7 +74,7 @@ func Debug(msg string) {
 		return
 	}
 	msg = withTrace(msg)
-	defaultLogger.infoLogger.Debug(msg)
+	defaultLogger.debugLogger.Debug(msg)
 }
 
 func Debugf(format string, args ...any) {
@@ -92,9 +92,9 @@ func DebugWith(msg string, fields Fields) {
 	}
 	msg = withTrace(msg)
 	if len(fields) > 0 {
-		defaultLogger.infoLogger.Debug(msg, toZapFields(fields)...)
+		defaultLogger.debugLogger.Debug(msg, toZapFields(fields)...)
 	} else {
-		defaultLogger.infoLogger.Debug(msg)
+		defaultLogger.debugLogger.Debug(msg)
 	}
 }
 
